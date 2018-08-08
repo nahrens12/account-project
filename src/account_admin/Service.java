@@ -4,11 +4,14 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Service {
-	private Map<String, Account> accounts;  
 	
+	private Map<String, Account> accounts;  
+
 	public Service() {
 		accounts = new HashMap <String, Account>();
 	}
+	
+	
 	 
 	public void addAccount(String key, Account account)
 	{
@@ -19,5 +22,14 @@ public class Service {
 	{
 		return accounts.get(key); 	
 	}
+	
+	public Map<String, Account> getAccounts() {
+		return accounts;
+	}
+
+	public void setAccounts(Map<String, Account> accounts) {
+		this.accounts = accounts;
+	}
+	
 	
 }

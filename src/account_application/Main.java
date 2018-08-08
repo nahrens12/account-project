@@ -1,11 +1,14 @@
 package account_application;
 
+import java.util.Map;
+
 import account_admin.Account;
 import account_admin.Service;
+import convert_jsontojava.Json;
 
 public class Main {
 	
-	Service service;
+	static Service service;
 	
 	public Main() {
 		service = new Service();
@@ -28,5 +31,11 @@ public class Main {
 	public static void main(String[] args){
 		
 		new Main().run();
+		Map<String, Account> accountMap = service.getAccounts(); 
+		Json convert = new Json();
+		
+		String jsonConvert = convert.JsonConverter(accountMap);
+		System.out.println(jsonConvert);
 	}
+	
 }
