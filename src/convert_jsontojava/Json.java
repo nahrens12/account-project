@@ -12,7 +12,7 @@ public class Json {
 	Gson gson = new GsonBuilder().setPrettyPrinting().create();
 	
 	
-	public String JsonConverter(Map<String, Account> accountMap)
+	public String JsonConverter(Map<Integer, Account> accountMap)
 	{
 		return gson.toJson(accountMap);
 	}
