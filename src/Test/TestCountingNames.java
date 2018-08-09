@@ -29,7 +29,7 @@ public class TestCountingNames {
 	@Test
 	public void testSearchNames() {
 		
-		assertEquals(3, service.searchNames("daniel"));
+		assertEquals(3, service.countNames("daniel"));
 	}
 
 

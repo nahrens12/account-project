@@ -34,12 +34,13 @@ public class Service {
 		this.accounts = accounts;
 	}
 
-	public int searchNames(String firstName) {
+	public int countNames(String firstName) {
 		for(int i=0; i<accounts.size(); i++)
 		{
-			if(accounts.get(i).getFirstName().equals(firstName)) {
+			String retrievedFirstName = accounts.get(i).getFirstName();
+			if(retrievedFirstName.equals(firstName)) {
 				nameCounter ++;
-			}	
+			}
 		}
 	
 		return nameCounter;
