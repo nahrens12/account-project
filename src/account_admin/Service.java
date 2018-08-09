@@ -1,11 +1,13 @@
 package account_admin;
 
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
 
 public class Service {
 	
 	private int counter = 0;
+	private int nameCounter=0;
 	private Map<Integer, Account> accounts;  
 
 	public Service() {
@@ -31,6 +33,15 @@ public class Service {
 	public void setAccounts(Map<Integer, Account> accounts) {
 		this.accounts = accounts;
 	}
+
+	public int searchNames(String firstName) {
+		for(int i=0; i<accounts.size(); i++)
+		{
+			if(accounts.get(i).getFirstName().equals(firstName)) {
+				nameCounter ++;
+			}	
+		}
 	
-	
+		return nameCounter;
+	}	
 }

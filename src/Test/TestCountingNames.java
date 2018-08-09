@@ -22,12 +22,15 @@ public class TestCountingNames {
 
 		service.addAccount(new Account("zak" ,"mohamed","765"));
 		service.addAccount(new Account("daniel","okoro","345"));	
+		service.addAccount(new Account("daniel","douche","365"));
+		service.addAccount(new Account("daniel","wasteman","385"));
 	}
 	
 	@Test
 	public void testSearchNames() {
 		
-		assertEquals(3, searchNames(""));
+		assertEquals(3, service.searchNames("daniel"));
 	}
+
 
 }

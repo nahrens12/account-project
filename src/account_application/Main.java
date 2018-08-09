@@ -9,16 +9,17 @@ import convert_jsontojava.Json;
 public class Main {
 	
 	static Service service;
+   
 	
 	public Main() {
 		service = new Service();
 
-		this.service.addAccount(new Account("zak","mohamed","765"));
-		this.service.addAccount(new Account("daniel","okoro","345"));	
+		Main.service.addAccount(new Account("zak","mohamed","765"));
+		Main.service.addAccount(new Account("daniel","okoro","345"));	
 	}
 	
 	public void printAccountByKey(int key) {
-		Account account = this.service.retrieveAccount(key);
+		Account account = Main.service.retrieveAccount(key);
 		System.out.println("First Name: "+account.getFirstName());
 		System.out.println("Last Name: "+account.getLastName());
 		System.out.println("Account Number: "+account.getAccountNumber());	
@@ -36,6 +37,8 @@ public class Main {
 		
 		String jsonConvert = convert.JsonConverter(accountMap);
 		System.out.println(jsonConvert);
+		
+		
 	}
 	
 }

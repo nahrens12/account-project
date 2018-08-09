@@ -17,15 +17,15 @@ public class Tests {
 		
 		service = new Service();
 
-		service.addAccount("1234", new Account("zak","mohamed","765"));
-		service.addAccount("987", new Account("daniel","okoro","345"));	
+		service.addAccount(new Account("zak","mohamed","765"));
+		service.addAccount(new Account("daniel","okoro","345"));	
 
 	}
 	
 	@Test
 	public void testRetrieveAccount()
 	{
-		Account account = service.retrieveAccount("1234");
+		Account account = service.retrieveAccount(1);
 		
 		assertEquals("765", account.getAccountNumber());
 	}
@@ -33,8 +33,8 @@ public class Tests {
 	@Test
 	public void testAddAccount()
 	{
-		service.addAccount("1234", new Account("zak","mohamed","765"));
-		assertEquals("zak", service.retrieveAccount("1234").getFirstName() );
+		service.addAccount(new Account("zak","mohamed","765"));
+		assertEquals(1, service.retrieveAccount(1).getFirstName() );
 	}
 
 }
